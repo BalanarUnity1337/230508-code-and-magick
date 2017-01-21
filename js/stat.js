@@ -1,7 +1,7 @@
 'use strict';
 
 window.renderStatistics = function (ctx, names, times) {
-  var drawCloud = function(x, y, width, height) {
+  var drawCloud = function (x, y, width, height) {
     var offset = 15;
     ctx.beginPath();
     ctx.moveTo(x, y);
@@ -15,7 +15,7 @@ window.renderStatistics = function (ctx, names, times) {
     ctx.closePath();
     ctx.stroke();
     ctx.fill();
-  }
+  };
 
   ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
   drawCloud(110, 20, 420, 270);
@@ -43,9 +43,9 @@ window.renderStatistics = function (ctx, names, times) {
   var columnIndent = 50;
   var step = histogramHeight / max;
 
-  for (var i = 0; i < times.length; i++) {
+  for (i = 0; i < times.length; i++) {
     var name = names[i];
-    var time = times[i];
+    time = times[i];
     var height = step * time;
 
     ctx.fillText(time.toFixed(0), histogramX + (columnIndent + columnWidth) * i, histogramHeight - height + 85);
@@ -60,4 +60,4 @@ window.renderStatistics = function (ctx, names, times) {
     ctx.fillStyle = '#000000';
     ctx.fillText(name, histogramX + (columnIndent + columnWidth) * i, histogramHeight + 110);
   }
-}
+};
