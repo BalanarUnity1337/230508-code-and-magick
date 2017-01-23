@@ -1,9 +1,9 @@
 'use strict';
 /**
  *
- * @param context ctx Контекст рисования на холсте
- * @param array names Массив имен победителей
- * @param array times Массив времени прохождения
+ * @param {object} ctx Контекст рисования на холсте
+ * @param {array} names Массив имен победителей
+ * @param {array} times Массив времени прохождения
  */
 window.renderStatistics = function (ctx, names, times) {
   var HISTOGRAM_HEIGHT = 150;
@@ -18,13 +18,13 @@ window.renderStatistics = function (ctx, names, times) {
 
   /**
    *
-   * @param int x Начальная координата облака по оси X
-   * @param int y Начальная координата облака по оси Y
-   * @param int width Ширина облака
-   * @param int height Ширина облака
-   * @param string fillColor Цвет заливки облака
+   * @param {number} x Начальная координата облака по оси X
+   * @param {number} y Начальная координата облака по оси Y
+   * @param {number} width Ширина облака
+   * @param {number} height Ширина облака
+   * @param {string} fillColor Цвет заливки облака
    */
-  function drawCloud (x, y, width, height, fillColor) {
+  function drawCloud(x, y, width, height, fillColor) {
     var offset = 15;
     ctx.beginPath();
     ctx.moveTo(x, y);
