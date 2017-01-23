@@ -56,7 +56,7 @@ window.renderStatistics = function (ctx, names, times) {
    * Поиск максимального значения
    * времени в массиве times
    *
-   * @returns {number}
+   * @return {number}
    */
   function getMaxTime() {
     var max = -1;
