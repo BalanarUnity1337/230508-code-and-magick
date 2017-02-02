@@ -3,7 +3,6 @@
 var setupOpen = document.querySelector('.setup-open');
 var setup = document.querySelector('.setup');
 var setupClose = setup.querySelector('.setup-close');
-var setupWizardForm = setup.querySelector('.setup-wizard-form');
 var setupSubmit = setup.querySelector('.setup-submit');
 var setupUserName = setup.querySelector('.setup-user-name');
 var setupFireballWrap = setup.querySelector('.setup-fireball-wrap');
