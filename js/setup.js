@@ -10,12 +10,12 @@ var wizard = setup.querySelector('#wizard');
 var wizardCoat = wizard.querySelector('#wizard-coat');
 var wizardEyes = wizard.querySelector('#wizard-eyes');
 var wizardCoatColors = [
-  'rgb(101, 137, 164)',
-  'rgb(241, 43, 107)',
-  'rgb(146, 100, 161)',
-  'rgb(56, 159, 117)',
-  'rgb(215, 210, 55)',
-  'rgb(0, 0, 0)'
+  '#6589a4',
+  '#f12b6b',
+  '#9264a1',
+  '#389f75',
+  '#d7d237',
+  '#000000'
 ];
 var wizardEyesColors = [
   'black',
