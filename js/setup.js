@@ -10,12 +10,12 @@ var wizard = setup.querySelector('#wizard');
 var wizardCoat = wizard.querySelector('#wizard-coat');
 var wizardEyes = wizard.querySelector('#wizard-eyes');
 var wizardCoatColors = [
-  'rgb(101, 137, 164)',
-  'rgb(241, 43, 107)',
-  'rgb(146, 100, 161)',
-  'rgb(56, 159, 117)',
-  'rgb(215, 210, 55)',
-  'rgb(0, 0, 0)'
+  '#6589a4',
+  '#f12b6b',
+  '#9264a1',
+  '#389f75',
+  '#d7d237',
+  '#000000'
 ];
 var wizardEyesColors = [
   'black',
@@ -77,10 +77,8 @@ setupSubmit.addEventListener('click', function (e) {
 });
 
 setupSubmit.addEventListener('keydown', function (e) {
-  if (isActivateEvent(e)) {
-    if (formValidation()) {
-      hideSetupMenu();
-    }
+  if (isActivateEvent(e) && formValidation()) {
+    hideSetupMenu();
   }
 });
 
@@ -94,34 +92,25 @@ setupUserName.addEventListener('input', function () {
 });
 
 /**
- * При нажатии на элемент #wizard-coat (мантия мага)
+ * При нажатии на элемент #wizard-coat
  * происходит изменение ее цвета на любой другой
  * случайный цвет, расположенный в массиве wizardCoatColors
  */
-wizardCoat.addEventListener('click', function () {
-  var colorNumber = Math.floor(Math.random() * wizardCoatColors.length);
-  wizardCoat.style.fill = wizardCoatColors[colorNumber];
-});
+window.colorizeElement(wizardCoat, wizardCoatColors, 'fill');
 
 /**
- * При нажатии на элемент #wizard-eyes (глаза мага)
+ * При нажатии на элемент #wizard-eyes
  * происходит изменение их цвета на любой другой
  * случайный цвет, расположенный в массиве wizardEyesColors
  */
-wizardEyes.addEventListener('click', function () {
-  var colorNumber = Math.floor(Math.random() * wizardEyesColors.length);
-  wizardEyes.style.fill = wizardEyesColors[colorNumber];
-});
+window.colorizeElement(wizardEyes, wizardEyesColors, 'fill');
 
 /**
- * При нажатии на элемент .setup-fireball-wrap (огненный шар)
+ * При нажатии на элемент .setup-fireball-wrap
  * происходит изменение его цвета на любой другой
  * случайный цвет, расположенный в массиве wizardFireballColors
  */
-setupFireballWrap.addEventListener('click', function () {
-  var colorNumber = Math.floor(Math.random() * wizardFireballColors.length);
-  setupFireballWrap.style.background = wizardFireballColors[colorNumber];
-});
+window.colorizeElement(setupFireballWrap, wizardFireballColors, 'backgroundColor');
 
 /**
  * Скрываем меню настройки и удаляем
@@ -141,6 +130,7 @@ function showSetupMenu() {
   setup.classList.remove('invisible');
   document.addEventListener('keydown', eventHandlerKeydownSetup);
   toggleAriaPressed(setupOpen);
+  setupClose.focus();
 }
 
 /**
