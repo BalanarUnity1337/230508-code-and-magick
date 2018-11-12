@@ -2,6 +2,7 @@
 
 * Студент: [Иван Елизенцев](https://up.htmlacademy.ru/javascript/8/user/230508).
 * Наставник: [Данил Чекалин](https://up.htmlacademy.ru/javascript/8/user/335807).
+* [Demo](https://balanarunity1337.github.io/230508-code-and-magick/)
 
 ---
 
